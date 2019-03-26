@@ -4,21 +4,24 @@ import instagram_explore
 
 requires = ['requests']
 
+
 class PyTest(TestCommand):
     def finalize_options(self):
         TestCommand.finalize_options(self)
         self.test_args = []
         self.test_suite = True
+
     def run_tests(self):
         import pytest
         pytest.main(self.test_args)
+
 
 setup(
     name='instagram-explore',
     version=instagram_explore.__version__,
     description='instagram scrapping module',
     long_description=open('README.rst').read(),
-    url='https://github.com/midnightSuyama/instagram-explore',
+    url='https://github.com/rodrigosestari/instagram-explore',
     author='midnightSuyama',
     author_email='midnightSuyama@gmail.com',
     license='MIT',
